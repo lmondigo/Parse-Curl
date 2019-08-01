@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'RACV Hosted Agent'
 
 steps:
 - script: echo Hello, world!
@@ -23,6 +23,6 @@ steps:
       [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls"
       
       Set-ExecutionPolicy Unrestricted
-      
+      Import-module .\Parse-Curl.psm1
       Import-module .\Parse-Curl.psd1
 
