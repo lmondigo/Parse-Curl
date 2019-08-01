@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'PRDPIPEAP01'
+  vmImage: 'windows-latest'
 
 steps:
 - script: echo Hello, world!
