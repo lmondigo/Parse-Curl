@@ -17,3 +17,13 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- task: InlinePowershell@1
+  inputs:
+    Script: |
+      [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls"
+      
+      Set-ExecutionPolicy Unrestricted
+      
+      Import-module .\Parse-Curl.psd1
+
